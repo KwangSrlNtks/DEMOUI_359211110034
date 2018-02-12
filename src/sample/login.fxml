@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #002171;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #002171;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <Pane prefHeight="400.0" prefWidth="260.0" style="-fx-background-color: #0d47a1;">
          <children>
@@ -32,8 +31,8 @@
             </Label>
          </children>
       </Pane>
-      <JFXTextField fx:id="username" focusColor="#f8f7f7" labelFloat="true" layoutX="333.0" layoutY="104.0" promptText="Username" />
-      <JFXPasswordField fx:id="password" focusColor="#f8f6f6" labelFloat="true" layoutX="333.0" layoutY="170.0" promptText="Password" />
+      <JFXTextField fx:id="username" focusColor="#f8f7f7" labelFloat="true" layoutX="333.0" layoutY="104.0" promptText="Username" unFocusColor="WHITE" />
+      <JFXPasswordField fx:id="password" focusColor="#f8f6f6" labelFloat="true" layoutX="333.0" layoutY="170.0" promptText="Password" unFocusColor="#f5f5f5" />
       <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="280.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/icons8_Male_User_100px.png" />
@@ -44,7 +43,7 @@
             <Image url="@../image/icons8_Lock_100px.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnLogin" layoutX="315.0" layoutY="229.0" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #5472d3;" text="Login" textFill="#fcfcfc" />
+      <JFXButton fx:id="btnLogin" layoutX="315.0" layoutY="229.0" onAction="#Login" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #5472d3;" text="Login" textFill="#fcfcfc" />
       <Label layoutX="269.0" layoutY="378.0" text="DB Status :" textFill="#f8f6f6" />
       <Label fx:id="dbStatus" layoutX="333.0" layoutY="378.0" prefHeight="17.0" prefWidth="150.0" textFill="#02fc1f" />
    </children>
