@@ -31,10 +31,10 @@ public class loginModel {
         PreparedStatement pr = null;
         ResultSet rs = null;
 
-        String sql = "Select * FROM user where username = ? and"+"password = ?";
+        String sql = "SELECT * FROM user where username = ? and password = ?";
         try {
             pr = this.connection.prepareStatement(sql);
-            pr.setString(2, user);
+            pr.setString(1, user);
             pr.setString(2, pass);
 
             rs = pr.executeQuery();

@@ -1,11 +1,14 @@
 package sample;
 
+import Admin.AdminController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -22,7 +25,7 @@ public class Controller implements Initializable {
     @FXML
     private TextField username;
     @FXML
-    private TextField password;
+    private PasswordField password;
     @FXML
     private Button btnLogin;
 
@@ -60,13 +63,24 @@ public class Controller implements Initializable {
     }//Login
 
     private void adminLogin() {
-        try {
-            Stage adminstage = new Stage();
-            FXMLLoader adminLoader = new FXMLLoader();
-            Pane adminRoot = (Pane) adminLoader.load(getClass().getResource("/Admin/AdminDashBoard.fxml").openStream());
-        }catch (IOException ex){
-            ex.printStackTrace();
-        }
+       // JOptionPane.showMessageDialog(null," Welcome To System");
+
+    try {
+        Stage adminstage = new Stage();
+        FXMLLoader adminLoader = new FXMLLoader();
+        Pane adminRoot = (Pane) adminLoader.load(getClass().getResource("/Admin/AdminDashBoard.fxml").openStream());
+
+        AdminController adminController = (AdminController) adminLoader.getController();
+        Scene scene = new Scene(adminRoot);
+        adminstage.setScene(scene);
+        adminstage.setTitle("Admin Dashbord");
+        adminstage.setResizable(false);
+        adminstage.show();
+
+    }catch (IOException ex){
+        ex.printStackTrace();
     }
+    }//adminLogin
+
 
 }
